@@ -1,3 +1,4 @@
 # dependencies
 /node_modules
-/Fine_Bakers/nodemodules
+#finebake
+Fine_Bakers/nodemodules
