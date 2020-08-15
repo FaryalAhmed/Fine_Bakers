@@ -1,0 +1,18 @@
+extends main
+block content
+  .container.gallery-container
+    div
+      h2 Our Famous Cupcakes
+      .tz-gallery
+        .row
+          for items in Cupcakes
+            .col-sm-6.col-md-4
+              .thumbnail
+                a(href=items.url)
+                  img(src= items.imagePath)
+                .caption 
+                  h3= items.name        
+                  h6 Price: #{p=items.price}
+                  p Single
+                  a.btn.btn-primary(href="/Cupcakes/cart/"+items._id, role="button") Add to Cart
+                  
