@@ -1,0 +1,127 @@
+extends layout
+
+block content
+  #myCarousel.carousel.slide(data-ride="carousel")
+    ol.carousel-indicators
+      li.active(data-target="#myCarousel", data-slide-to="0")
+      li(data-target="#myCarousel", data-slide-to="1")
+      li(data-target="#myCarousel", data-slide-to="2")
+      li(data-target="#myCarousel", data-slide-to="3")
+      li(data-target="#myCarousel", data-slide-to="4")
+    .carousel-inner
+      .carousel-item.active
+        img.d-block.w-100(src="/images/standCake1.jpg", alt="First slide ")
+      .carousel-item
+        img.d-block.w-100(src="../images/purplecupcakes.jpg", alt="Second slide")
+      .carousel-item
+        img.d-block.w-100(src="../images/weddingCake.jpg", alt="Third slide")
+      .carousel-item
+        img.d-block.w-100(src="../images/carouselcookie.jpg", alt="Third slide")
+      .carousel-item
+        img.d-block.w-100(src="../images/vegiPizza.jpg", alt="Fourth slide ")
+  #below-carousel
+    h2 Services We Provide
+  .services
+    .row
+      .col-md-4
+        .famous_prod
+          a(href="/CustomizedCakes")
+            img.img-responsive.img-resize(src="../images/m&mCake.jfif", alt="whitecake")
+        br
+        h4 Customized Cakes
+        br
+        hr
+        br
+        p.
+          
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente veniam repellendus ab! Odio aliquam fugit ullam officia. Maxime eligendi exercitationem fugit obcaecati, aut, quidem rem unde, placeat explicabo voluptas minima!
+          
+      .col-md-4
+        .famous_prod
+           a(href="/BakeryProducts")
+            img.img-responsive.img-resize(src="../images/bakery.jpg", alt="bakery_items")
+        br
+        h4 Bakery
+        br
+        hr
+        br
+        p.
+          
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente veniam repellendus ab! Odio aliquam fugit ullam officia. Maxime eligendi exercitationem fugit obcaecati, aut, quidem rem unde, placeat explicabo voluptas minima!
+          
+      .col-md-4
+        .famous_prod
+          a(href="/Cupcakes")
+             img.img-responsive.img-resize(src="../images/whiteCupcake.jpg", alt="whitecake")
+        br
+        h4 Special Cupcakes
+        br
+        hr(style="margin-left: 120px;")
+        br
+        p.
+          
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente veniam repellendus ab! Odio aliquam fugit ullam officia. Maxime eligendi exercitationem fugit obcaecati, aut, quidem rem unde, placeat explicabo voluptas minima!
+          
+  .container-fluid
+    #carouselExampleControls.carousel.vert.slide(data-ride="carousel", data-interval="7000")
+      .carousel-inner
+        .carousel-item.active.
+          Quality Food for Quality individuals.Order your favourite food and fill your heart with an abundance of joy,love and bliss!!!
+          
+        .carousel-item.
+          The secret of success in life is to eat what you like and let the food fight it out inside.
+          
+        .carousel-item.
+          Good bread is the most fundamentally satisfying of all foods; good bread with fresh butter, the greatest of feasts!          
+  .end-portion
+    .row
+      .col-lg-5
+        h3
+          i.fas.fa-envelope-open-text(style="font-size:150%;")
+          |  Subscribe to Our Newsletter
+        br
+        input(type="text", placeholder="Enter Your Email", style="width: 90%;border: 2px solid bisque; border-radius: 2%;")
+        br
+        br
+        button.btn.btn-primary(type="button", style="height: 25%;width: 40%;margin-left: 20%;background-color: rgb(88, 126, 128);border-color: rgb(88, 126, 128);") Sign Up Now
+      .col-lg-3
+        p(style="margin-left: 55%; line-height: 2.2rem;")
+          | Careers
+          br
+          | About US
+          br
+          | Deliveries
+          br
+          | FAQs
+          br
+          | Stores
+      p
+      .col-lg-4
+        p(style="margin-left: 20%;line-height: 3rem;")
+          | Contact US:
+          br
+          i.fa.fa-phone-alt(style="color: white;")
+          | 01-0202-0000
+
+          br
+          i.fab.fa-whatsapp
+          | 0300-0000000
+
+    .icons
+      ul
+        li
+          i.fab.fa-facebook-square
+        li
+          i.fab.fa-instagram
+        li
+          i.fab.fa-linkedin
+    div(style="margin-bottom: -3rem; color: aliceblue;")
+      hr(style="background-color: rgb(146, 138, 138);")
+      .cc
+        ul
+          li Secure Credit Payments
+          li(style="margin-left: 1%;")
+            i.fab.fa-cc-visa
+          li(style="margin-left: -1%;")
+            i.fab.fa-cc-paypal
+          span(style="margin-left:50%; color: rgb(201, 204, 198);") Fine Bakers © 2020

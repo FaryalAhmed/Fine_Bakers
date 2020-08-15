@@ -1,0 +1,71 @@
+meta(charset="utf-8")
+meta(http-equiv="X-UA-Compatible", content="IE=edge")
+meta(name="viewport", content="width=device-width,initial-scale=1")
+title Gallery
+link(href="https://fonts.googleapis.com/css?family=Tangerine&display=swap", rel="stylesheet")
+link(href="https://fonts.googleapis.com/css?family=Great+Vibes|Tangerine&display=swap", rel="stylesheet")
+link(href="https://fonts.googleapis.com/css2?family=Courgette&display=swap", rel="stylesheet")
+link(href="https://fonts.googleapis.com/css2?family=Prata&display=swap", rel="stylesheet")
+link(rel="stylesheet", href="../fontawesome-free-5.14.0-web/css/all.min.css")
+link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
+link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css")
+script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js")
+script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js")
+link(rel="stylesheet", href="/stylesheets/gallery-grid.css")
+
+nav.navbar.fixed-top.navbar-expand-lg.navbar-dark.scrolling-navbar
+  a.navbar-brand#logo(href="#") Fine Bakers
+  button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarNav", aria-controls="navbarNav", aria-expanded="false", aria-label="Toggle navigation")
+    span.navbar-toggler-icon
+  .collapse.navbar-collapse#navbarNav
+    ul.navbar-nav.ml-auto
+      li.nav-item.active
+        a.nav-link(href="#") Home
+      li.nav-item
+        a.nav-link(href="#") About US
+      li.nav-item
+        a.nav-link(href="./Gallery.html") Gallery
+      li.nav-item
+        a.nav-link(href="#") Our Services
+   
+
+
+.container.gallery-container
+        div
+            h2 A Glimpse of Our Work
+        .tz-gallery
+            .row
+                .col-sm-6.col-md-4
+                    a.lightbox(href="../images/orangeCake.jpg")
+                        img(src="../images/orangeCake.jpg", alt="Park")
+                .col-sm-6.col-md-4
+                    a.lightbox(href="../images/party.jpg")
+                        img(src="../images/party.jpg", alt="Bridge")
+                .col-sm-12.col-md-4
+                    a.lightbox(href="../images/peaches.jpg")
+                        img(src="../images/peaches.jpg", alt="Tunnel")
+                .col-sm-6.col-md-4
+                    a.lightbox(href="../images/cake.jpg")
+                        img(src="../images/cake.jpg", alt="Coast")
+                .col-sm-6.col-md-4
+                    a.lightbox(href="../images/custom.jpg")
+                        img(src="../images/custom.jpg", alt="Rails")
+                .col-sm-6.col-md-4
+                    a.lightbox(href="../images/figs.jpg")
+                        img(src="../images/figs.jpg", alt="Traffic")
+                .col-sm-6.col-md-4
+                    a.lightbox(href="../images/heartShape.jpg")
+                        img(src="../images/heartShape.jpg", alt="Rocks")
+                .col-sm-6.col-md-4
+                    a.lightbox(href="../images/mirror.jpg")
+                        img(src="../images/mirror.jpg", alt="Benches")
+                .col-sm-6.col-md-4
+                    a.lightbox(href="../images/purplebrown.jpg")
+                        img(src="../images/purplebrown.jpg", alt="Sky")
+            script(src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js")
+            script.
+                baguetteBox.run('.tz-gallery');
+            
+
+            
