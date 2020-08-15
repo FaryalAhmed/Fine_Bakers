@@ -1,0 +1,94 @@
+body {
+    background-image: url("./spring.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url(../images/making.jpg);
+}
+
+h2 {
+   
+    margin-bottom: 4pc;
+    text-align: center;
+    margin-top: 2pc;
+    
+}
+
+
+
+form {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+input[type="text"] {
+    border: 1px solid;
+    width: 250px;
+}
+
+input[type="password"] {
+    border: 1px solid;
+    width: 250px;
+}
+
+input[type="email"] {
+    border: 1px solid;
+    width: 250px;
+}
+
+
+
+label {
+    float: left;
+    color: rgb(238, 226, 226);
+  
+    font-size: 1.2em;
+    width: 30%;
+
+
+}
+
+
+
+.container {
+    margin-top: 5%;
+    margin-left: 30%;
+    margin-bottom: 5%;
+    width: 40%;
+    background-color: rgba(236, 218, 233, 0.3);
+    
+    
+ 
+}
+p{
+    color: rgb(228, 250, 203);
+    font-size: 1.2em;
+}
+p>a{
+  color: rgb(159, 211, 231);  
+}
+
+form {
+    margin-left: 8%;
+}
+
+
+
+input[type="submit"] {
+    background-color: rgb(122, 169, 189);
+    border-color:rgb(208, 224, 231);
+    padding: 5px;
+    width: 40%;
+    margin-left: 38%;
+    margin-top: 7%;
+    padding: 2%;
+}
+input[type="submit"]:hover
+{
+    background-color: rgb(179, 220, 221);
+    color: rgb(117, 114, 114);
+}
+
+#errors{
+    background-color: rgb(231, 105, 105);
+    margin-bottom: 4%;
+}

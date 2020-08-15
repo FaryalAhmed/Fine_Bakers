@@ -1,0 +1,18 @@
+extends main
+block content  
+  .container.gallery-container
+    div
+      h2 Bakery Items
+      .tz-gallery
+        .row
+          for bakeProds in BakeryProducts
+            .col-sm-6.col-md-4
+              .thumbnail
+                a(href=bakeProds.url)
+                  img(src= bakeProds.imagePath)
+                .caption 
+                  h3= bakeProds.name      
+                  h6 Price: #{p=bakeProds.price}
+                  p Single
+                  a.btn.btn-primary(href="/BakeryProducts/cart/"+bakeProds._id, role="button") Add to Cart
+                
