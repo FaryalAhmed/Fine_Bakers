@@ -1,0 +1,54 @@
+meta(charset="UTF-8")
+meta(name="viewport", content="width=device-width,initial-scale=1")
+title Document
+link(rel="stylesheet", href="../fontawesome-free-5.14.0-web/css/all.min.css")
+script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js")
+script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js")
+link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
+link(href="https://fonts.googleapis.com/css?family=Tangerine&display=swap", rel="stylesheet")
+link(href="https://fonts.googleapis.com/css?family=Great+Vibes|Tangerine&display=swap", rel="stylesheet")
+link(rel="stylesheet", href="/stylesheets/SignUp.css")
+style(type="text/css").
+  body {
+    background-image: url("../images/flour.jpg");
+    color:black
+  }
+  .container {
+       background-color: rgb(236, 230, 218,0.6);
+  }
+  label
+    {
+        color: black
+    }
+  p{
+        color:black
+    }
+  p>a
+    {
+        color:rgb(46, 116, 112);
+    }
+  button
+    {
+        background-color:rgb(62, 126, 123);
+    }
+.container
+  .row
+    .col-md-12.col-md-offset-4
+      h2        Sign In
+      div#errors #{title}
+      form(action="/users/login", name="signin_form", method="POST")
+        .form-group
+          label(for="email") Email:
+          input#email.form-control(type="email",name="email",required)
+        .form-group
+          label(for="pwd") Password:
+          input#pwd.form-control(type="password",name="password",required)
+        input.btn.btn-primary(type="submit",value="Log In")
+        br
+        br
+        p Not have an account?  
+         a(href="/users/signup") Sign Up
+        br
+  
+        
