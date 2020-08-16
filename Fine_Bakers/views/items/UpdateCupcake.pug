@@ -1,0 +1,38 @@
+meta(charset="UTF-8")
+meta(name="viewport", content="width=device-width,initial-scale=1")
+title Document
+link(rel="stylesheet", href="../fontawesome-free-5.14.0-web/css/all.min.css")
+script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js")
+script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js")
+link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
+link(href="https://fonts.googleapis.com/css?family=Tangerine&display=swap", rel="stylesheet")
+link(href="https://fonts.googleapis.com/css?family=Great+Vibes|Tangerine&display=swap", rel="stylesheet")
+script(src="/javascripts/signUp.js")
+link(rel="stylesheet", href="/stylesheets/Additem.css")
+
+     
+.container
+  .row
+    .col-md-12.col-md-offset-4
+      h2 Update Item
+      div#errors #{title}
+        form#updateItem(action="/Cupcakes/updateItem/"+cupcake._id, name="updateItem", method="POST")
+         .form-group
+            label(for="imagepath") Image Path:
+            input#imgpath.form-control(type="text", name="imagePath", autofocus,required,value= cupcake.imagePath)
+         .form-group
+            label(for="name") Item Name :
+            input#name.form-control(type="text", name="name",required,value= cupcake.name)
+         .form-group
+            label(for="QuantityInStock") Quantity:
+            input#qty.form-control(type="number",name="QuantityInStock",required,value= cupcake.QuantityInStock)
+         .form-group
+            label(for="price") Price:
+            input#price.form-control(type="number",name="price",required,value= cupcake.price)
+         .form-group
+            label(for="url") Url:
+            input#url.form-control(type="url",name="url",required,value= cupcake.url)    
+         input.btn.btn-primary(type="submit" value="Update")
+        br
+        br

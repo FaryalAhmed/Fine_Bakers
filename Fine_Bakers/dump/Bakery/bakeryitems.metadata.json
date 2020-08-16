@@ -1,1 +1,0 @@
-{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"Bakery.bakeryitems"}],"uuid":"e13ff774b2d04631afdc9786e72aaa53"}

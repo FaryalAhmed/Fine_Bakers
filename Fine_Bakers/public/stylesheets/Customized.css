@@ -1,89 +1,134 @@
 img {
-    max-width: 100%;
-    max-height: auto;
-    /* remove extra space below image */
+      max-width: 100%;
+      max-height: auto;
+      /* remove extra space below image */
 }
 
 .navbar {
-    background-color: rgba(255, 255, 255, 0.5)
+      background-color: rgba(255, 255, 255, 0.5);
 }
 
-
-.navbar-toggler 
-{
-background-color:  rgb(20, 97, 110);
-border: 2px solid;
-padding: 0.6%;
+.navbar-toggler {
+      background-color: rgb(20, 97, 110);
+      border: 2px solid;
+      padding: 0.6%;
 }
 #logo {
-    font-weight: bolder;
-    font-size: 2.5rem;
-    font-family: "Great Vibes", cursive;
-    color: rgba(14, 83, 129, 0.979);
+      font-weight: bolder;
+      font-size: 2.5rem;
+      font-family: "Great Vibes", cursive;
+      color: rgba(14, 83, 129, 0.979);
 }
 
-li>a {
-    font-weight: bolder;
-    font-size: 2.2rem;
-    font-family: "Tangerine", cursive;
-    color: rgba(11, 78, 114, 0.959) !important;
+li > a {
+      font-weight: bolder;
+      font-size: 2.2rem;
+      font-family: "Tangerine", cursive;
+      color: rgba(11, 78, 114, 0.959) !important;
 }
 
 body {
-    background-image: linear-gradient(to top, #ecedee 0%, #eceeef 75%, #e7e8e9 100%);
-    min-height: 100vh;
-    font: normal 16px sans-serif;
-    padding: 60px 0;
-    margin-top: 1%;
+      background-image: linear-gradient(
+            to top,
+            #ecedee 0%,
+            #eceeef 75%,
+            #e7e8e9 100%
+      );
+      min-height: 100vh;
+      font: normal 16px sans-serif;
+      padding: 60px 0;
+      margin-top: 1%;
 }
-  
+
 .container.gallery-container {
- 
-    background-color: rgb(238, 238, 237);
-    color: #35373a;
-    min-height: 100vh;
-    border-radius: 20px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
-    
+      background-color: rgb(238, 238, 237);
+      color: #35373a;
+      min-height: 100vh;
+      border-radius: 20px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
 }
 
-.gallery-container h2{
-    margin-top: 70px; 
-    color:rgba(11, 78, 114, 0.959);
-    font-family: 'Prata', serif;
-    text-align: center;
-    padding: 5%;
-    font-weight: bold;
+.gallery-container h2 {
+      margin-top: 70px;
+      color: rgba(11, 78, 114, 0.959);
+      font-family: "Prata", serif;
+      text-align: center;
+      padding: 5%;
+      font-weight: bold;
 }
-
 
 .tz-gallery {
-    padding: 15px;
+      padding: 15px;
 }
-.gallery-container img
-{
-    transition: 0.2s ease-in-out;
-    box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+.gallery-container img {
+      transition: 0.2s ease-in-out;
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
 }
 .gallery-container img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
-.thumbnail{        
-    
-   
-    height: 420px;
-    width: 100%;  
-    text-align: center;
+.thumbnail {
+      height: 80vh;
+      width: 100%;
+      text-align: center;
 }
 
-.thumbnail img{
-    margin-bottom: 30px;
-    transition: 0.2s ease-in-out;
-    box-shadow: 0 2px 3px rgba(0,0,0,0.2);
-    width: 100%;
-    border-radius: 4px;
-    height: 190px;
-    display: block;
+.thumbnail img {
+      margin-bottom: 30px;
+      transition: 0.2s ease-in-out;
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      border-radius: 4px;
+      height: 190px;
+      display: block;
+}
+.btn.btn-info {
+      margin-left: 45%;
+      margin-bottom: 5%;
+}
+.btn.btn-primary {
+      border-radius: 15px;
+      width:40%;
+      background-color: rgb(139, 32, 130) !important;
+      border-color: rgb(146, 67, 140) !important;
+
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+      background-color: rgb(177, 34, 165) !important;
+      border-color: rgb(182, 45, 170) !important;
+      box-shadow: none !important;
+}
+.btn.btn-warning {
+      border-radius: 15px;
+      margin-left: 2%;
+      width:40%;
+      color: whitesmoke;
+      background-color: rgb(20, 133, 141) !important;
+      border-color: rgb(12, 131, 139) !important;
+}
+.btn-warning:hover,
+.btn-warning:active,
+.btn-warning:focus {
+      background-color: rgb(41, 172, 182) !important;
+      border-color: rgb(182, 45, 170) !important;
+      box-shadow: none !important;
+
+}
+.btn.btn-danger {
+      border-radius: 15px;
+      width:40%;
+      margin-left: 2%;
+      background-color:  rgb(201, 19, 19)!important;
+}
+.btn-danger:hover,
+.btn-danger:active,
+.btn-danger:focus {
+      background-color: rgb(243, 17, 17) !important;
+      border-color: rgb(209, 40, 82) !important;
+      box-shadow: none !important;
 }

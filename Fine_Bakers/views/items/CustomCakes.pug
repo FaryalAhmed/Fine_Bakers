@@ -2,6 +2,7 @@ extends main
 block content  
   .container.gallery-container
     div
+    if !user
       h2 Bakery cakes
       .tz-gallery
         .row
@@ -15,4 +16,34 @@ block content
                   h6 Price: #{p=cakes.price}
                   p Single
                   a.btn.btn-primary(href="/CustomizedCakes/cart/"+cakes._id, role="button") Add to Cart
-    
+    else if user.admin
+      h2 Bakery cakes
+      a.btn.btn-info(href="/CustomizedCakes/addItem", role="button") Add item
+      .tz-gallery
+        .row
+          for cakes in CstmCake
+            .col-sm-6.col-md-4
+              .thumbnail
+                a(href=cakes.url)
+                  img(src= cakes.imagePath)
+                .caption 
+                  h3= cakes.name              
+                  h6 Price: #{p=cakes.price}
+                  h6 Size: #{p=cakes.size} lb
+                  p Single
+                  a.btn.btn-warning(href="/CustomizedCakes/updateItem/"+cakes._id, role="button") Update
+                  a.btn.btn-danger(href="/CustomizedCakes/deleteItem/"+cakes._id,role="button") Delete
+    else
+      h2 Bakery cakes
+      .tz-gallery
+        .row
+          for cakes in CstmCake
+            .col-sm-6.col-md-4
+              .thumbnail
+                a(href=cakes.url)
+                  img(src= cakes.imagePath)
+                .caption 
+                  h3= cakes.name              
+                  h6 Price: #{p=cakes.price}
+                  p Single
+                  a.btn.btn-primary(href="/CustomizedCakes/cart/"+cakes._id, role="button") Add to Cart

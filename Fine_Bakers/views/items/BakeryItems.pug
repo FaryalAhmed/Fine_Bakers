@@ -2,10 +2,11 @@ extends main
 block content  
   .container.gallery-container
     div
+    if !user 
       h2 Bakery Items
       .tz-gallery
         .row
-          for bakeProds in BakeryProducts
+           for bakeProds in BakeryProducts
             .col-sm-6.col-md-4
               .thumbnail
                 a(href=bakeProds.url)
@@ -14,5 +15,34 @@ block content
                   h3= bakeProds.name      
                   h6 Price: #{p=bakeProds.price}
                   p Single
-                  a.btn.btn-primary(href="/BakeryProducts/cart/"+bakeProds._id, role="button") Add to Cart
-                
+                  a.btn.btn-primary(href="/BakeryProducts/cart/"+bakeProds._id, role="button") Add to Cart  
+    else if user.admin
+        h2 Bakery Items
+        a.btn.btn-info(href="/BakeryProducts/addItem", role="button") Add item
+        .tz-gallery
+          .row
+            for bakeProds in BakeryProducts
+              .col-sm-6.col-md-4
+                .thumbnail
+                  a(href=bakeProds.url)
+                    img(src= bakeProds.imagePath)
+                  .caption 
+                    h3= bakeProds.name      
+                    h6 Price: #{p=bakeProds.price}
+                    p Single
+                    a.btn.btn-warning(href="/BakeryProducts/updateItem/"+bakeProds._id, role="button") Update
+                    a.btn.btn-danger(href="/BakeryProducts/deleteItem/"+bakeProds._id,role="button") Delete
+    else 
+      h2 Bakery Items
+      .tz-gallery
+        .row
+           for bakeProds in BakeryProducts
+            .col-sm-6.col-md-4
+              .thumbnail
+                a(href=bakeProds.url)
+                  img(src= bakeProds.imagePath)
+                .caption 
+                  h3= bakeProds.name      
+                  h6 Price: #{p=bakeProds.price}
+                  p Single
+                  a.btn.btn-primary(href="/BakeryProducts/cart/"+bakeProds._id, role="button") Add to Cart 

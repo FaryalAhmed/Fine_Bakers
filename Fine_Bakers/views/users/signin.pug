@@ -18,7 +18,7 @@ style(type="text/css").
        background-color: rgb(236, 230, 218,0.6);
   }
   label
-    {
+    {   
         color: black
     }
   p{
@@ -40,10 +40,10 @@ style(type="text/css").
       form(action="/users/login", name="signin_form", method="POST")
         .form-group
           label(for="email") Email:
-          input#email.form-control(type="email",name="email",required)
+          input#email.form-control(type="email",name="email",required,value="abc@gmail.com")
         .form-group
           label(for="pwd") Password:
-          input#pwd.form-control(type="password",name="password",required)
+          input#pwd.form-control(type="password",name="password",required,value="abcxyz00")
         input.btn.btn-primary(type="submit",value="Log In")
         br
         br

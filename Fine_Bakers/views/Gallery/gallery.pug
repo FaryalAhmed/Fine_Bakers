@@ -15,19 +15,30 @@ script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 link(rel="stylesheet", href="/stylesheets/gallery-grid.css")
 
 nav.navbar.fixed-top.navbar-expand-lg.navbar-dark.scrolling-navbar
-  a.navbar-brand#logo(href="#") Fine Bakers
+  a.navbar-brand#logo(href="/") Fine Bakers
   button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarNav", aria-controls="navbarNav", aria-expanded="false", aria-label="Toggle navigation")
     span.navbar-toggler-icon
   .collapse.navbar-collapse#navbarNav
     ul.navbar-nav.ml-auto
       li.nav-item.active
-        a.nav-link(href="#") Home
+        a.nav-link(href="/") Home
       li.nav-item
         a.nav-link(href="#") About US
       li.nav-item
-        a.nav-link(href="./Gallery.html") Gallery
+        a.nav-link(href="/Gallery") Gallery
+      if !user
+        li.nav-item
+          a.nav-link(href="/users/login") Login    
+           i.fas.fa-user
+      else if user
+        li.nav-item
+          a.nav-link(href="/users/profile") Profile    
+        li.nav-item
+          a.nav-link(href="/logout") Logout 
+           i.fas.fa-sign-out-alt  
       li.nav-item
-        a.nav-link(href="#") Our Services
+        a.nav-link(href="/ShoppingCart")   
+         i.fas.fa-shopping-cart
    
 
 

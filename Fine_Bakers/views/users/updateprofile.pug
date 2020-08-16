@@ -1,53 +1,27 @@
 meta(charset="UTF-8")
 meta(name="viewport", content="width=device-width,initial-scale=1")
 title Document
-link(rel="stylesheet", href="/fontawesome-free-5.14.0-web/css/all.min.css")
+link(rel="stylesheet", href="../fontawesome-free-5.14.0-web/css/all.min.css")
 script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
 script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js")
 script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js")
 link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
 link(href="https://fonts.googleapis.com/css?family=Tangerine&display=swap", rel="stylesheet")
 link(href="https://fonts.googleapis.com/css?family=Great+Vibes|Tangerine&display=swap", rel="stylesheet")
+script(src="/javascripts/signUp.js")
 link(rel="stylesheet", href="/stylesheets/SignUp.css")
 style.
   
   body
       {
           background-image: none;
-      }
-  .container
-  {
-      width: 70%;
-      margin-left: 12%;
-      margin-top:10%
-  }
-  .container .user
-  {
-      border: 2px solid black;
-      height: 62%;
-      width: 100%;
-     border-radius:50%;
-      margin-top:20%;
-  
    
-  }
-  .container .user img{
-      display: block;
-      height: 180px;
-      width:160px;
-      margin-left:16px
-      
-  }
-  label{
-    margin-left:10%;
-    color:black
-  }
-  #fst{
-    margin-left:40%
-  }
-  #snd{
-    margin-left:2%
-  }
+      }
+      label
+      {
+      color:black
+      }
+
 nav.navbar.fixed-top.navbar-expand-lg.navbar-dark.scrolling-navbar
   a.navbar-brand#logo(href="#") Fine Bakers
   button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarNav", aria-controls="navbarNav", aria-expanded="false", aria-label="Toggle navigation")
@@ -72,20 +46,26 @@ nav.navbar.fixed-top.navbar-expand-lg.navbar-dark.scrolling-navbar
            i.fas.fa-sign-out-alt  
       li.nav-item
         a.nav-link(href="/ShoppingCart")   
-         i.fas.fa-shopping-cart
+         i.fas.fa-shopping-cart   
 .container
   .row
-    .col-md-4.col-md-offset-4
-      .container.user
-        img(src="/images/userIcon.png", alt)
-    .col-md-8.col-md-offset-4
-        h2 Your Pofile
+    .col-md-12.col-md-offset-4
+      h2 Update Info
+      div#errors #{title}
+      form#sign_form(action="/users/profile/update/"+user._id, name="sign_form", method="POST")
         .form-group
-          label(for="name") Name:
-          input#name.form-control(type="text", name="name", readonly,value= user.firstname)
+          label(for="fname") First name:
+          input#fname.form-control(type="text", name="firstname", autofocus,required,value=user.firstname)
+        .form-group
+          label(for="lastname") Last Name:
+          input#lname.form-control(type="text", name="lastname",required,value=user.lastname)
         .form-group
           label(for="email") Email:
-          input.form-control(type="text",readonly,value=user.email)
+          input#email.form-control(type="email",name="email",required,value=user.email)
+        .form-group
+          label(for="pwd") Password:
+          input#pwd.form-control(type="password",name="password",required)
+        input.btn.btn-primary(type="submit" value="Submit")
         br
-        a#fst(href="/users/profile/delete/"+user._id, class="btn btn-danger") Delete Account
-        a#snd(href="/users/profile/update/"+user._id, class="btn btn-info") Update Account
+        br
+        

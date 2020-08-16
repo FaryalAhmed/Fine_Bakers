@@ -1,1 +1,0 @@
-{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"vidly.genres"}],"uuid":"3b5b42eba8414f9caaa16593a2b85f21"}

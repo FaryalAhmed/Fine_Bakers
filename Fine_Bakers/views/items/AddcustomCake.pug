@@ -1,32 +1,15 @@
 meta(charset="UTF-8")
 meta(name="viewport", content="width=device-width,initial-scale=1")
-title Fine Bakers
+title Document
+link(rel="stylesheet", href="../fontawesome-free-5.14.0-web/css/all.min.css")
 script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
 script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js")
 script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js")
-link(href="https://fonts.googleapis.com/css?family=Noto+Serif&display=swap", rel="stylesheet")
-link(href="https://fonts.googleapis.com/css2?family=Courgette&family=Philosopher&family=Playball&display=swap", rel="stylesheet")
-link(href="https://fonts.googleapis.com/css?family=Tangerine&display=swap", rel="stylesheet")
-link(href="https://fonts.googleapis.com/css2?family=Prata&display=swap", rel="stylesheet")
-link(href="https://fonts.googleapis.com/css?family=Great+Vibes|Tangerine&display=swap", rel="stylesheet")
-link(href="https://fonts.googleapis.com/css2?family=Courgette&display=swap", rel="stylesheet")
-link(rel="stylesheet", href="/fontawesome-free-5.14.0-web/css/all.min.css")
 link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
-link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css")
-link(rel="stylesheet", href="/stylesheets/style.css")
-style(type="text/css").
-  .container
-  {
-    margin-top:10%
-  }
-  .btn
-  {
-    background-color: purple
-  }
-  h1{
-    text-align:center;
-    margin-bottom:3%
-  }
+link(href="https://fonts.googleapis.com/css?family=Tangerine&display=swap", rel="stylesheet")
+link(href="https://fonts.googleapis.com/css?family=Great+Vibes|Tangerine&display=swap", rel="stylesheet")
+script(src="/javascripts/signUp.js")
+link(rel="stylesheet", href="/stylesheets/Additem.css")
 nav.navbar.fixed-top.navbar-expand-lg.navbar-dark.scrolling-navbar
   a.navbar-brand#logo(href="/") Fine Bakers
   button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarNav", aria-controls="navbarNav", aria-expanded="false", aria-label="Toggle navigation")
@@ -52,25 +35,34 @@ nav.navbar.fixed-top.navbar-expand-lg.navbar-dark.scrolling-navbar
       li.nav-item
         a.nav-link(href="/ShoppingCart")   
          i.fas.fa-shopping-cart
+                
+     
+        
+     
 .container
-  h1 My shopping Cart
-  - var total=0;
-    table.table
-      thead
-        th Name
-        th Price
-        th Actions
-      tbody
-        each cakes in cart
-          - total += Number(cakes.price)
-          tr
-            td=cakes.name
-            td=cakes.price
-            td
-              a(href="/cart/removeItem/"+cakes._id, class="btn btn-danger") Remove from cart
-      tfoot
-        tr
-          td Total
-          td=total
-      
-    a(href="/cart/checkout" class="btn btn-primary") Checkout
+  .row
+    .col-md-12.col-md-offset-4
+      h2 Add Item
+      div#errors #{title}
+       form#addItem(action="/CustomizedCakes/addItem", name="addItem", method="POST", )
+        .form-group
+          label(for="imagepath") Image Path:
+          input#imgpath.form-control(type="text", name="imagePath", autofocus,required)
+        .form-group
+          label(for="name") Item Name :
+          input#name.form-control(type="text", name="name",required)
+        .form-group
+          label(for="size") Size:
+          input#size.form-control(type="text", name="size", autofocus,required)
+        .form-group
+          label(for="QuantityInStock") Quantity:
+          input#qty.form-control(type="number",name="QuantityInStock",required)
+        .form-group
+          label(for="price") Price:
+          input#price.form-control(type="number",name="price",required)
+        .form-group
+          label(for="url") Url:
+          input#url.form-control(type="url",name="url",required)
+        input.btn.btn-primary(type="submit" value="Add")
+        br
+        br
