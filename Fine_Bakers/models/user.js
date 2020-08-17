@@ -1,5 +1,3 @@
-var a
-
 var mongoose = require("mongoose");
 const config = require('config');
 const jwt = require("jsonwebtoken");

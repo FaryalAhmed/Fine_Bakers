@@ -6,10 +6,11 @@ const router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
-
 });
- module.exports=router;
-
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
 
 
  router.get('/ShoppingCart',function(req, res, next) {
@@ -17,8 +18,7 @@ router.get('/', function(req, res, next) {
   let cart = req.cookies.cart;
   if (!cart) cart = [];
   res.render('Shopping/cart',{cart});
-  
-});
+ });
 
 router.get("/cart/removeItem/:id", async function (req, res, next) {
   let cart = [];
@@ -39,5 +39,6 @@ router.get("/cart/checkout",auth,function(req, res, next) {
 router.get("/AboutUs",function(req, res, next) {
   res.render('aboutus');
 });
+
 
 module.exports=router;

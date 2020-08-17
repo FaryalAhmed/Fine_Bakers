@@ -1,5 +1,4 @@
 var isAdmin = require("./midldleware/admin");
-
 var createError = require("http-errors");
 var express = require("express");
 var mongoose = require("mongoose");
@@ -18,6 +17,12 @@ const session = require("express-session");
 var MongoConnect = require("connect-mongo")(session);
 var app = express();
 
+var app = express();
+if (!config.get("jwtPrivateKey")) {
+      console.error("FATAL ERROR: jwtPrivateKey is not defined.");
+      process.exit(1);
+}
+
 mongoose
       .connect("mongodb://localhost/Bakery", {
             useNewUrlParser: true,
@@ -26,26 +31,40 @@ mongoose
       .then(() => console.log("Connected to MongoDB..."))
       .catch((err) => console.error("Could not connect to MongoDB..."));
 
+D;
 //view engine setup
 app.use(
       session({
             secret: "mysupersecret",
             resave: false,
             saveUninitialized: false,
-            cookie: { maxAge: 90 * 60 * 1000},
+            cookie: { maxAge: 90 * 60 * 1000 },
       })
 );
+
+// view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 mongoose.set("useNewUrlParser", true);
 mongoose.set("useFindAndModify", false);
 mongoose.set("useCreateIndex", true);
+
 app.use(sessionAuth);
+a8f2553e68698fc51ea738fadd3886956f409826;
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+app.use(
+      session({
+            secret: "mysupersecret",
+            resave: false,
+            saveUninitialized: false,
+            cookie: { maxAge: 90 * 60 * 1000 },
+      })
+);
+a8f2553e68698fc51ea738fadd3886956f409826;
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
@@ -54,7 +73,13 @@ app.use("/Gallery", galleryRouter);
 app.use("/Cupcakes", cupcakesRouter);
 app.use("/BakeryProducts", bakeryItems);
 app.use("/CustomizedCakes", cstCakes);
-app.use("/logout",usersRouter);
+
+app.use("/logout", usersRouter);
+
+app.use((req, res, next) => {
+      res.locals.session = req.session;
+      next();
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
