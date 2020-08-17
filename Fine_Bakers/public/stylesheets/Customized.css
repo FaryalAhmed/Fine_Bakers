@@ -132,3 +132,7 @@ body {
       border-color: rgb(209, 40, 82) !important;
       box-shadow: none !important;
 }
+.col-10.ml-sm-auto.px-4
+{
+    margin-top: 5%;
+}

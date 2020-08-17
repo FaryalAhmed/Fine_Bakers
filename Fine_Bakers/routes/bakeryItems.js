@@ -17,7 +17,9 @@ router.get("/cart/:id", async (req, res, next) => {
       }
       cart.push(bakeryItems);
       res.cookie("cart", cart);
-      res.send("Item Added Successfully");
+      req.flash("success","Item Added to the cart");
+      res.redirect('/BakeryProducts');
+
 });
 
 router.get("/addItem", (req, res, next) => {
@@ -27,6 +29,7 @@ router.post("/addItem", auth, async (req, res, next) => {
       let bakeryItem = new Bakeryitem(req.body);
       await bakeryItem.save();
       let bakeProds = await Bakeryitem.find();
+      req.flash('success','Item Added Successfully');
       res.render("items/BakeryItems", { BakeryProducts: bakeProds });
 });
 
@@ -42,11 +45,15 @@ router.post("/updateItem/:id", async (req, res, next)=> {
       bakeryItem.price = req.body.price;
       bakeryItem.url = req.body.url;
       await bakeryItem.save();
+       req.flash('success','Item Updated Successfully');
+
+
       res.redirect("/BakeryProducts");
     });
 
 router.get("/deleteItem/:id",async(req,res,next)=>
-{    let product = await Bakeryitem.findByIdAndRemove(req.params.id);   
+{    let product = await Bakeryitem.findByIdAndRemove(req.params.id); 
+      req.flash('error','Item deleted Successfully')  
       res.redirect("/BakeryProducts");
 });
 module.exports = router;

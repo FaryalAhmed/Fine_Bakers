@@ -96,4 +96,7 @@ li>a {
     font-size: 2rem;
     font-family: "Tangerine", cursive;
     color: rgba(11, 78, 114, 0.959) !important;
+
 }
+.col-10.ml-sm-auto.px-4
+{margin-top: 5%;}

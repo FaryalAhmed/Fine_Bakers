@@ -52,6 +52,16 @@ nav.navbar.fixed-top.navbar-expand-lg.navbar-dark.scrolling-navbar
       li.nav-item
         a.nav-link(href="/ShoppingCart")   
          i.fas.fa-shopping-cart
+div.col-10.ml-sm-auto.px-4(style="margin-top:7%")
+    if successes
+      for success in successes
+        div.alert.alert-success #{ success }
+          button.close(type="button", data-dismiss="alert") ×
+    if errors
+      for error, i in errors
+        div.alert.alert-danger #{ error } 
+          button.close(type="button", data-dismiss="alert") ×
+        
 .container
   h1 My shopping Cart
   - var total=0;

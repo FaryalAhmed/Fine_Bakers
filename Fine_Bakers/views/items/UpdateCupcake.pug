@@ -11,7 +11,41 @@ link(href="https://fonts.googleapis.com/css?family=Great+Vibes|Tangerine&display
 script(src="/javascripts/signUp.js")
 link(rel="stylesheet", href="/stylesheets/Additem.css")
 
-     
+nav.navbar.fixed-top.navbar-expand-lg.navbar-dark.scrolling-navbar
+  a.navbar-brand#logo(href="/") Fine Bakers
+  button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarNav", aria-controls="navbarNav", aria-expanded="false", aria-label="Toggle navigation")
+    span.navbar-toggler-icon
+  .collapse.navbar-collapse#navbarNav
+    ul.navbar-nav.ml-auto
+      li.nav-item.active
+        a.nav-link(href="/") Home
+      li.nav-item
+        a.nav-link(href="/aboutus") About US
+      li.nav-item
+        a.nav-link(href="/Gallery") Gallery
+      if !user
+        li.nav-item
+          a.nav-link(href="/users/login") Login    
+           i.fas.fa-user
+      else if user
+        li.nav-item
+          a.nav-link(href="/users/profile") Profile    
+        li.nav-item
+          a.nav-link(href="/logout") Logout 
+           i.fas.fa-sign-out-alt  
+      li.nav-item
+        a.nav-link(href="/ShoppingCart")   
+         i.fas.fa-shopping-cart
+div.col-10.ml-sm-auto.px-4
+    if successes
+      for success in successes
+        div.alert.alert-success #{ success }
+          button.close(type="button", data-dismiss="alert") ×
+
+    if errors
+      for error, i in errors
+        div.alert.alert-danger #{ error } 
+          button.close(type="button", data-dismiss="alert") ×
 .container
   .row
     .col-md-12.col-md-offset-4

@@ -16,7 +16,9 @@ router.get("/cart/:id", async (req, res, next) => {
       }
       cart.push(cakes);
       res.cookie("cart", cart);
-      res.send("Item Added Successfully");
+      req.flash("success","Item Added to the cart");
+      res.redirect('/Cupcakes');
+
 });
 
 router.get("/addItem", (req, res, next) => {
@@ -26,6 +28,7 @@ router.post("/addItem", auth, async (req, res, next) => {
       let cupcake = new Cupcake(req.body);
       await cupcake.save();
       let items = await Cupcake.find();
+      req.flash('success','Item Added Successfully');
       res.render("items/Cupcakes", { Cupcakes: items });
 });
 
@@ -41,11 +44,13 @@ router.post("/updateItem/:id", async (req, res, next) => {
       cupcake.price = req.body.price;
       cupcake.url = req.body.url;
       await cupcake.save();
+      req.flash('success','Item Updated Successfully');
       res.redirect("/Cupcakes");
 });
 
 router.get("/deleteItem/:id", async (req, res, next) => {
       let cupcake = await Cupcake.findByIdAndRemove(req.params.id);
+      req.flash('error','Item deleted Successfully');
       res.redirect("/Cupcakes");
 });
 module.exports = router;

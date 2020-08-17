@@ -1,4 +1,3 @@
-
 const { User, validateUser } = require("../models/user.js");
 const express = require("express");
 const bcrypt = require("bcryptjs");
@@ -41,7 +40,7 @@ router.post("/signup", async (req, res, next) => {
                                     return;
                               } else {
 
-                                    res.redirect("/users/login");
+                                    res.render("users/signin",{title:"Account was created successfully. You can Log In now!!!"});
                               }
                         });
                   });
@@ -78,8 +77,6 @@ router.get("/", function (req, res, next) {
       req.session.user = null;
       res.redirect("/");
 });
-
-
 router.get('/profile/update/:id',async(req, res, next)=>{
 
 let user = await User.findById(req.params.id)
@@ -95,14 +92,15 @@ router.post('/profile/update/:id',async(req, res, next)=>{
       bcrypt.genSalt(10, function (err, salt) {
             bcrypt.hash(user.password, salt, async function (err, hash) {
                   if (err) {
-                        console.log(err);
+                        req.flash("error",err)
                   }
                   user.password = hash;
                   await user.save(function (err) {
                         if (err) {
-                              console.log(err);
+                              req.flash("error",err)
                               return;
                         } else {
+                              req.flash("success","Profile Updated Successfully");
                               res.redirect("/users/profile");
 
                         }
@@ -111,14 +109,14 @@ router.post('/profile/update/:id',async(req, res, next)=>{
       });
       });
 router.get('/profile',async(req, res, next)=>{
-
       let user = await User.findById(req.session.user._id)
             res.render("users/profile",{user});
       });
 router.get('/profile/delete/:id',async(req, res, next)=>{
       let user = await User.findByIdAndRemove(req.params.id);
+      req.flash("error","Account Deleted Successfully");
       req.session.user = null;
-      res.redirect("/");
+      res.redirect("/login");
 });
 
 
