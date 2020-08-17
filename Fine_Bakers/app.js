@@ -30,8 +30,6 @@ mongoose
       })
       .then(() => console.log("Connected to MongoDB..."))
       .catch((err) => console.error("Could not connect to MongoDB..."));
-
-D;
 //view engine setup
 app.use(
       session({
@@ -50,7 +48,7 @@ mongoose.set("useFindAndModify", false);
 mongoose.set("useCreateIndex", true);
 
 app.use(sessionAuth);
-a8f2553e68698fc51ea738fadd3886956f409826;
+
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -64,7 +62,7 @@ app.use(
             cookie: { maxAge: 90 * 60 * 1000 },
       })
 );
-a8f2553e68698fc51ea738fadd3886956f409826;
+
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
