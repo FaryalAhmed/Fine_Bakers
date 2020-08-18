@@ -6,11 +6,11 @@ body {
 }
 
 h2 {
-   
+
     margin-bottom: 4pc;
     text-align: center;
     margin-top: 2pc;
-    
+
 }
 
 
@@ -40,7 +40,7 @@ input[type="email"] {
 label {
     float: left;
     color: rgb(238, 226, 226);
-  
+
     font-size: 1.2em;
     width: 30%;
 
@@ -55,16 +55,18 @@ label {
     margin-bottom: 5%;
     width: 40%;
     background-color: rgba(236, 218, 233, 0.3);
-    
-    
- 
+
+
+
 }
-p{
+
+p {
     color: rgb(228, 250, 203);
     font-size: 1.2em;
 }
-p>a{
-  color: rgb(159, 211, 231);  
+
+p>a {
+    color: rgb(159, 211, 231);
 }
 
 form {
@@ -75,34 +77,35 @@ form {
 
 input[type="submit"] {
     background-color: rgb(122, 169, 189);
-    border-color:rgb(208, 224, 231);
+    border-color: rgb(208, 224, 231);
     padding: 5px;
     width: 40%;
     margin-left: 38%;
     margin-top: 7%;
     padding: 2%;
 }
-input[type="submit"]:hover
-{
+
+input[type="submit"]:hover {
     background-color: rgb(179, 220, 221);
     color: rgb(117, 114, 114);
 }
 
-#errors{
+#errors {
     background-color: rgb(231, 105, 105);
     margin-bottom: 4%;
 }
+
 .navbar {
     background-color: rgba(255, 255, 255, 0.5)
 }
 
 
-.navbar-toggler 
-{
-background-color:  rgb(20, 97, 110);
-border: 2px solid;
-padding: 0.6%;
+.navbar-toggler {
+    background-color: rgb(20, 97, 110);
+    border: 2px solid;
+    padding: 0.6%;
 }
+
 #logo {
     font-weight: bolder;
     font-size: 2.5rem;
@@ -117,8 +120,6 @@ li>a {
     color: rgba(11, 78, 114, 0.959) !important;
 }
 
-.col-10.ml-sm-auto.px-4
-{
+.col-10.ml-sm-auto.px-4 {
     margin-top: 5%;
-    border: 2px solid rgb(158, 29, 29)
 }
